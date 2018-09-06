@@ -1,4 +1,6 @@
 .day {
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   width: 150px;
@@ -20,5 +22,31 @@
 }
 
 .delete-event {
+  position: relative;
+  z-index: 1000;
   cursor: pointer;
+}
+
+.event-title {
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.day-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  border: none;
+  background-color: rgba(0,0,0,1);
+  opacity: 0;
+  color: white;
+  transition: 200ms ease-in;
+
+  &:hover {
+    opacity: 0.4
+  }
 }

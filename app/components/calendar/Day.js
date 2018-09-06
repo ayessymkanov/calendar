@@ -39,11 +39,12 @@ export default class Day extends React.Component {
     const { isModalActive, title } = this.state
     return(
       <div className={`${eventExists ? 'day event' : 'day'}`} onClick={this.onClick}>
+        <button className="day-btn">{eventExists ? 'edit' : 'add'}</button>
         <div className="day-meta">
           <div>{index + 1}</div>
           {eventTitle.length > 0 ? <div className="delete-event" onClick={this.deleteEvent}>x</div> : null}
         </div>
-        <div>{this.props.event.title}</div>
+        <div className="event-title">{this.props.event.title}</div>
         <EventModal 
           isOpen={isModalActive}  
           title={title}

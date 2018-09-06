@@ -4,11 +4,11 @@ export default class RequireAuth extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      loggedIn: localStorage.getItem('loggedIn')
+      loggedIn: localStorage.getItem('user') ? true : false
     }
   }
   componentWillMount () {
-    if (this.state.loggedIn !== 'true') {
+    if (!this.state.loggedIn) {
       this.props.history.push('/')
     }
   }
